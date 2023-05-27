@@ -1,0 +1,101 @@
+Open5GS daemon v2.5.5
+
+02/10 21:04:20.328: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/10 21:04:20.328: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/10 21:04:20.872: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/10 21:04:20.996: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/10 21:04:21.033: [diam] INFO: CONNECTED TO 'mme.localdomain' (SCTP,soc#15): (../lib/diameter/common/logger.c:108)
+02/10 21:08:57.685: [app] INFO: SIGINT received (../src/main.c:53)
+02/10 21:08:57.685: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/10 21:08:57.992: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/10 21:24:53.215: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/10 21:24:53.215: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/10 21:24:53.222: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/10 21:24:53.274: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/10 21:24:53.296: [diam] INFO: CONNECTED TO 'mme.localdomain' (SCTP,soc#15): (../lib/diameter/common/logger.c:108)
+02/10 22:15:48.795: [app] INFO: SIGINT received (../src/main.c:53)
+02/10 22:15:48.816: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/10 22:15:50.526: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/11 15:00:58.766: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/11 15:00:58.766: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/11 15:00:58.769: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/11 15:00:58.866: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/11 15:13:37.185: [app] INFO: SIGINT received (../src/main.c:53)
+02/11 15:13:37.202: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/11 15:13:37.408: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/11 15:16:10.718: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/11 15:16:10.718: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/11 15:16:10.721: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/11 15:16:10.768: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/11 15:21:33.668: [app] INFO: SIGINT received (../src/main.c:53)
+02/11 15:21:33.692: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/11 15:21:33.807: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/11 15:26:31.031: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/11 15:26:31.031: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/11 15:26:31.034: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/11 15:26:31.073: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/11 15:54:30.720: [app] INFO: SIGINT received (../src/main.c:53)
+02/11 15:54:30.738: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/11 15:54:30.909: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/11 17:10:21.865: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/11 17:10:21.865: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/11 17:10:21.875: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/11 17:10:21.918: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/11 17:20:46.605: [app] INFO: SIGINT received (../src/main.c:53)
+02/11 17:20:46.633: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/11 17:20:47.083: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/11 17:23:22.338: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/11 17:23:22.338: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/11 17:23:22.366: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/11 17:23:22.405: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/11 17:36:14.389: [app] INFO: SIGINT received (../src/main.c:53)
+02/11 17:36:14.511: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/11 17:36:16.249: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/11 17:39:33.808: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/11 17:39:33.808: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/11 17:39:33.811: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/11 17:39:33.876: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/11 17:53:24.510: [app] INFO: SIGINT received (../src/main.c:53)
+02/11 17:53:24.742: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/11 17:53:24.855: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/11 19:15:12.340: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/11 19:15:12.340: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/11 19:15:12.343: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/11 19:15:12.381: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/11 19:47:40.682: [app] INFO: SIGINT received (../src/main.c:53)
+02/11 19:47:40.703: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/11 19:47:41.421: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/11 19:53:11.875: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/11 19:53:11.875: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/11 19:53:11.877: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/11 19:53:11.997: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/11 19:59:27.634: [app] INFO: SIGINT received (../src/main.c:53)
+02/11 19:59:27.655: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/11 19:59:27.959: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
+Open5GS daemon v2.5.5
+
+02/13 11:50:28.263: [app] INFO: Configuration: '/home/cp105/open5gs/install/etc/open5gs/hss.yaml' (../lib/app/ogs-init.c:126)
+02/13 11:50:28.263: [app] INFO: File Logging: '/home/cp105/open5gs/install/var/log/open5gs/hss.log' (../lib/app/ogs-init.c:129)
+02/13 11:50:28.266: [dbi] INFO: MongoDB URI: 'mongodb://localhost/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+02/13 11:50:28.309: [app] INFO: HSS initialize...done (../src/hss/app-init.c:31)
+02/13 11:52:15.984: [app] INFO: SIGINT received (../src/main.c:53)
+02/13 11:52:16.008: [app] INFO: Open5GS daemon terminating... (../src/main.c:226)
+02/13 11:52:16.159: [app] INFO: HSS terminate...done (../src/hss/app-init.c:39)
