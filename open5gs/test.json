@@ -7,18 +7,17 @@
  },
  
  { 
+  "ue_ul_handle": "authentication_request",
+  "dl_reply": "authentication_reject",
+  "command_mode": "send",
+  "dl_params": "null",
+ },
+ 
+ {
   "ue_ul_handle": "null",
   "dl_reply": "null",
   "command_mode": "null",
   "dl_params": "null"
- },
-
- {
-  "ue_ul_handle": "service_request",
-  "dl_reply": "service_reject",
-  "command_mode": "send",
-  "dl_params":{
-    "gmm_cause": "OGS_5GMM_CAUSE_TRACKING_AREA_NOT_ALLOWED"
   }
  }
 ]
