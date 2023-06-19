@@ -827,11 +827,11 @@ void rrc_nr::ue::handle_rrc_setup_request(const asn1::rrc_nr::rrc_setup_request_
         hijack_rrc_setup_request = false;
     }else{
 
-    const uint8_t max_wait_time_secs = 16;
-    if (not parent->ngap->is_amf_connected()) {
-      logger.error("MME isn't connected. Sending Connection Reject");
-      send_rrc_reject(max_wait_time_secs);
-      return;
+        const uint8_t max_wait_time_secs = 16;
+        if (not parent->ngap->is_amf_connected()) {
+        logger.error("MME isn't connected. Sending Connection Reject");
+        send_rrc_reject(max_wait_time_secs);
+        return;
     }
 
     // Allocate PUCCH resources and reject if not available
@@ -872,104 +872,104 @@ void rrc_nr::ue::handle_rrc_reestablishment_request(const asn1::rrc_nr::rrc_rees
         hijack_rrc_reestablishment_request = false;
     }else{
 
-    uint32_t old_rnti = msg.rrc_reest_request.ue_id.c_rnti;
-    uint16_t pci      = msg.rrc_reest_request.ue_id.pci;
+        uint32_t old_rnti = msg.rrc_reest_request.ue_id.c_rnti;
+        uint16_t pci      = msg.rrc_reest_request.ue_id.pci;
 
-    // Log event
-    parent->logger.debug("rnti=0x%x, phyid=0x%x, smac=0x%x, cause=%s",
+        // Log event
+        parent->logger.debug("rnti=0x%x, phyid=0x%x, smac=0x%x, cause=%s",
                        old_rnti,
                        pci,
                        (uint32_t)msg.rrc_reest_request.ue_id.short_mac_i.to_number(),
                        msg.rrc_reest_request.reest_cause.to_string());
 
-    // Check AMF connection
-    const uint8_t max_wait_time_secs = 16;
-    if (not parent->ngap->is_amf_connected()) {
-      logger.error("AMF not connected. Sending Connection Reject.");
-      send_rrc_reject(max_wait_time_secs);
-      return;
-    }
+        // Check AMF connection
+        const uint8_t max_wait_time_secs = 16;
+        if (not parent->ngap->is_amf_connected()) {
+          logger.error("AMF not connected. Sending Connection Reject.");
+          send_rrc_reject(max_wait_time_secs);
+          return;
+        }
 
-    // Allocate PUCCH resources and reject if not available
-    if (not init_pucch()) {
-      logger.warning("Could not allocate PUCCH resources for rnti=0x%x. Sending RRC Reject.", rnti);
-      send_rrc_reject(max_wait_time_secs);
-      return;
-    }
+        // Allocate PUCCH resources and reject if not available
+        if (not init_pucch()) {
+          logger.warning("Could not allocate PUCCH resources for rnti=0x%x. Sending RRC Reject.", rnti);
+          send_rrc_reject(max_wait_time_secs);
+          return;
+        }
 
-    if (not is_idle()) {
-      // The created RNTI has to receive ReestablishmentRequest as first message
-      parent->logger.error(
-        "Could not reestablish connection for rnti=0x%x. Cause: old rnti=0x%x is not in RRC_IDLE.", rnti, old_rnti);
-      send_rrc_reject(max_wait_time_secs);
-      return;
-    }
+        if (not is_idle()) {
+          // The created RNTI has to receive ReestablishmentRequest as first message
+          parent->logger.error(
+            "Could not reestablish connection for rnti=0x%x. Cause: old rnti=0x%x is not in RRC_IDLE.", rnti, old_rnti);
+          send_rrc_reject(max_wait_time_secs);
+          return;
+        }
 
-    auto old_ue_it = parent->users.find(old_rnti);
+        auto old_ue_it = parent->users.find(old_rnti);
 
-    // Fallback to connection establishment for unrecognized rntis, and PCIs that do not belong to eNB
-    if (old_ue_it == parent->users.end()) {
-      parent->logger.info(
-        "Fallback to connection establishment for rnti=0x%x. Cause: no rnti=0x%x context available", rnti, old_rnti);
-      srsran::console("Fallback to connection establishment for rnti=0x%x. Cause: no context available\n", rnti);
+        // Fallback to connection establishment for unrecognized rntis, and PCIs that do not belong to eNB
+        if (old_ue_it == parent->users.end()) {
+          parent->logger.info(
+            "Fallback to connection establishment for rnti=0x%x. Cause: no rnti=0x%x context available", rnti, old_rnti);
+          srsran::console("Fallback to connection establishment for rnti=0x%x. Cause: no context available\n", rnti);
 
-      // send RRC Setup
-      send_rrc_setup();
-      set_activity_timeout(UE_INACTIVITY_TIMEOUT);
+          // send RRC Setup
+          send_rrc_setup();
+          set_activity_timeout(UE_INACTIVITY_TIMEOUT);
 
-      return;
-    }
+          return;
+        }
 
-    // Reestablishment procedure going forward
-    parent->logger.info("ConnectionReestablishmentRequest for rnti=0x%x. Sending Connection Reestablishment.", old_rnti);
-    srsran::console("User 0x%x requesting RRC Reestablishment as 0x%x. Cause: %s\n",
+        // Reestablishment procedure going forward
+        parent->logger.info("ConnectionReestablishmentRequest for rnti=0x%x. Sending Connection Reestablishment.", old_rnti);
+        srsran::console("User 0x%x requesting RRC Reestablishment as 0x%x. Cause: %s\n",
                   rnti,
                   old_rnti,
                   msg.rrc_reest_request.reest_cause.to_string());
 
-    ue* old_ue = old_ue_it->second.get();
+        ue* old_ue = old_ue_it->second.get();
 
-    // Recover security setup
-    sec_ctx          = old_ue->sec_ctx;
-    auto& pscell_cfg = parent->cfg.cell_list.at(UE_PSCELL_CC_IDX);
-    sec_ctx.regenerate_keys_handover(pscell_cfg.phy_cell.carrier.pci, pscell_cfg.ssb_absolute_freq_point);
+        // Recover security setup
+        sec_ctx          = old_ue->sec_ctx;
+        auto& pscell_cfg = parent->cfg.cell_list.at(UE_PSCELL_CC_IDX);
+        sec_ctx.regenerate_keys_handover(pscell_cfg.phy_cell.carrier.pci, pscell_cfg.ssb_absolute_freq_point);
 
-    // For the reestablishment, only add SRB1 to new UE context
-    next_radio_bearer_cfg.srb_to_add_mod_list.resize(1);
-    srb_to_add_mod_s& srb1 = next_radio_bearer_cfg.srb_to_add_mod_list[0];
-    srb1.srb_id            = 1;
+        // For the reestablishment, only add SRB1 to new UE context
+        next_radio_bearer_cfg.srb_to_add_mod_list.resize(1);
+        srb_to_add_mod_s& srb1 = next_radio_bearer_cfg.srb_to_add_mod_list[0];
+        srb1.srb_id            = 1;
 
-    // compute config and create SRB1 for new user
-    asn1::rrc_nr::radio_bearer_cfg_s dummy_radio_bearer_cfg; // just to compute difference, it's never sent to UE
-    compute_diff_radio_bearer_cfg(parent->cfg, radio_bearer_cfg, next_radio_bearer_cfg, dummy_radio_bearer_cfg);
-    fill_cellgroup_with_radio_bearer_cfg(
-      parent->cfg, old_rnti, *parent->bearer_mapper, dummy_radio_bearer_cfg, next_cell_group_cfg);
+        // compute config and create SRB1 for new user
+        asn1::rrc_nr::radio_bearer_cfg_s dummy_radio_bearer_cfg; // just to compute difference, it's never sent to UE
+        compute_diff_radio_bearer_cfg(parent->cfg, radio_bearer_cfg, next_radio_bearer_cfg, dummy_radio_bearer_cfg);
+        fill_cellgroup_with_radio_bearer_cfg(
+          parent->cfg, old_rnti, *parent->bearer_mapper, dummy_radio_bearer_cfg, next_cell_group_cfg);
 
-    // send RRC Reestablishment message and restore bearer configuration
-    send_connection_reest(old_ue->sec_ctx.get_ncc());
+        // send RRC Reestablishment message and restore bearer configuration
+        send_connection_reest(old_ue->sec_ctx.get_ncc());
 
-    // store current bearer/cell config with configured SRB1
-    radio_bearer_cfg = next_radio_bearer_cfg;
-    cell_group_cfg   = next_cell_group_cfg;
+        // store current bearer/cell config with configured SRB1
+        radio_bearer_cfg = next_radio_bearer_cfg;
+        cell_group_cfg   = next_cell_group_cfg;
 
-    // recover all previously created bearers from old UE object for (later) reconfiguration
-    next_radio_bearer_cfg = old_ue->radio_bearer_cfg;
-    next_cell_group_cfg   = old_ue->cell_group_cfg;
+        // recover all previously created bearers from old UE object for (later) reconfiguration
+        next_radio_bearer_cfg = old_ue->radio_bearer_cfg;
+        next_cell_group_cfg   = old_ue->cell_group_cfg;
 
-    // Recover GTP-U tunnels and NGAP context
-    parent->gtpu->mod_bearer_rnti(old_rnti, rnti);
-    parent->ngap->user_mod(old_rnti, rnti);
+        // Recover GTP-U tunnels and NGAP context
+        parent->gtpu->mod_bearer_rnti(old_rnti, rnti);
+        parent->ngap->user_mod(old_rnti, rnti);
 
-    // Reestablish E-RABs of old rnti later, during ConnectionReconfiguration
-    // bearer_list.reestablish_bearers(std::move(old_ue->bearer_list));
+        // Reestablish E-RABs of old rnti later, during ConnectionReconfiguration
+        // bearer_list.reestablish_bearers(std::move(old_ue->bearer_list));
 
-    // remove old RNTI
-    old_ue->deactivate_bearers();
-    parent->bearer_mapper->rem_user(old_rnti);
-    parent->task_sched.defer_task([this, old_rnti]() { parent->rem_user(old_rnti); });
+        // remove old RNTI
+        old_ue->deactivate_bearers();
+        parent->bearer_mapper->rem_user(old_rnti);
+        parent->task_sched.defer_task([this, old_rnti]() { parent->rem_user(old_rnti); });
 
-    set_activity_timeout(MSG5_RX_TIMEOUT);
-  }
+        set_activity_timeout(MSG5_RX_TIMEOUT);
+      }
 }
 
 void rrc_nr::ue::send_connection_reest(uint8_t ncc)
@@ -1077,18 +1077,18 @@ void rrc_nr::ue::handle_rrc_setup_complete(const asn1::rrc_nr::rrc_setup_complet
         handle_hook("rrc_setup_complete");
         hijack_rrc_setup_complete = false;
     }else{
-    update_mac(next_cell_group_cfg, true);
+        update_mac(next_cell_group_cfg, true);
 
-    // Update current radio bearer cfg
-    radio_bearer_cfg = next_radio_bearer_cfg;
-    cell_group_cfg   = next_cell_group_cfg;
+        // Update current radio bearer cfg
+        radio_bearer_cfg = next_radio_bearer_cfg;
+        cell_group_cfg   = next_cell_group_cfg;
 
-    // Create UE context in NGAP
-    using ngap_cause_t = asn1::ngap::rrcestablishment_cause_opts::options;
-    auto ngap_cause    = (ngap_cause_t)ctxt.connection_cause.value; // NGAP and RRC causes seem to have a 1-1 mapping
-    parent->ngap->initial_ue(
-      rnti, uecfg.carriers[0].cc, ngap_cause, msg.crit_exts.rrc_setup_complete().ded_nas_msg, ctxt.setup_ue_id);
-  }
+        // Create UE context in NGAP
+        using ngap_cause_t = asn1::ngap::rrcestablishment_cause_opts::options;
+        auto ngap_cause    = (ngap_cause_t)ctxt.connection_cause.value; // NGAP and RRC causes seem to have a 1-1 mapping
+        parent->ngap->initial_ue(
+          rnti, uecfg.carriers[0].cc, ngap_cause, msg.crit_exts.rrc_setup_complete().ded_nas_msg, ctxt.setup_ue_id);
+    }
 }
 
 /// TS 38.331, SecurityModeCommand
@@ -1173,12 +1173,11 @@ int rrc_nr::ue::update_as_security(uint32_t lcid, bool enable_integrity = true, 
 void rrc_nr::ue::handle_security_mode_complete(const asn1::rrc_nr::security_mode_complete_s& msg)
 {
 
-    if(hijack_security_mode_complete){
-        cout << "Modified Security Mode Complete" << endl;
-        handle_hook("rrc_security_mode_complete");
-        hijack_security_mode_complete = false;
-    }
-  else{
+  if(hijack_security_mode_complete){
+    cout << "Modified Security Mode Complete" << endl;
+    handle_hook("rrc_security_mode_complete");
+    hijack_security_mode_complete = false;
+  }else{
     parent->logger.info("SecurityModeComplete transaction ID: %d", msg.rrc_transaction_id);
     // finally, also enable ciphering on SRB1
     update_as_security(srb_to_lcid(srsran::nr_srb::srb1), false, true);
@@ -1297,13 +1296,13 @@ void rrc_nr::ue::handle_ue_capability_information(const asn1::rrc_nr::ue_cap_inf
         handle_hook("rrc_ue_capability_information");
         hijack_ue_capability_information = false;
     }else{
-    logger.info("UECapabilityInformation transaction ID: %d", msg.rrc_transaction_id);
-    send_rrc_reconfiguration();
-    // Send RRCReconfiguration if necessary
-    if (not nas_pdu_queue.empty()) {
-      send_rrc_reconfiguration();
+        logger.info("UECapabilityInformation transaction ID: %d", msg.rrc_transaction_id);
+        send_rrc_reconfiguration();
+        // Send RRCReconfiguration if necessary
+        if (not nas_pdu_queue.empty()) {
+          send_rrc_reconfiguration();
+        }
     }
-  }
 }
 
 void rrc_nr::ue::handle_rrc_reconfiguration_complete(const asn1::rrc_nr::rrc_recfg_complete_s& msg)
@@ -1314,11 +1313,11 @@ void rrc_nr::ue::handle_rrc_reconfiguration_complete(const asn1::rrc_nr::rrc_rec
         handle_hook("rrc_reconfiguration_complete");
         hijack_rrc_reconfiguration_complete = false;
     }else{
-    update_mac(next_cell_group_cfg, true);
-    radio_bearer_cfg = next_radio_bearer_cfg;
-    cell_group_cfg   = next_cell_group_cfg;
-    parent->ngap->ue_notify_rrc_reconf_complete(rnti, true);
-  }
+        update_mac(next_cell_group_cfg, true);
+        radio_bearer_cfg = next_radio_bearer_cfg;
+        cell_group_cfg   = next_cell_group_cfg;
+        parent->ngap->ue_notify_rrc_reconf_complete(rnti, true);
+    }
 }
 
 void rrc_nr::ue::handle_rrc_reestablishment_complete(const asn1::rrc_nr::rrc_reest_complete_s& msg)
@@ -1329,17 +1328,17 @@ void rrc_nr::ue::handle_rrc_reestablishment_complete(const asn1::rrc_nr::rrc_ree
         handle_hook("rrc_reestablishment_complete");
         hijack_rrc_reestablishment_complete = false;
     }else{
-    // Register DRB again, TODO: combine/move to establish_eps_bearer()
-    for (const auto& drb : next_radio_bearer_cfg.drb_to_add_mod_list) {
-     uint16_t lcid = drb1_lcid;
-      parent->bearer_mapper->add_eps_bearer(rnti, lcid - 3, srsran::srsran_rat_t::nr, lcid);
+        // Register DRB again, TODO: combine/move to establish_eps_bearer()
+        for (const auto& drb : next_radio_bearer_cfg.drb_to_add_mod_list) {
+         uint16_t lcid = drb1_lcid;
+         parent->bearer_mapper->add_eps_bearer(rnti, lcid - 3, srsran::srsran_rat_t::nr, lcid);
 
-      logger.info("Established EPS bearer for LCID %u and RNTI 0x%x", lcid, rnti);
-   }
+         logger.info("Established EPS bearer for LCID %u and RNTI 0x%x", lcid, rnti);
+       }
 
-    // send reconfiguration to reestablish SRB2 and all previously established DRBs
-    send_rrc_reconfiguration();
-  }
+      // send reconfiguration to reestablish SRB2 and all previously established DRBs
+      send_rrc_reconfiguration();
+    }
 }
 
 void rrc_nr::ue::send_rrc_release()
@@ -1607,12 +1606,6 @@ void rrc_nr::ue::log_rrc_container(const direction_t       dir,
   parent->log_rrc_message(srsran::to_c_str(strbuf), Tx, pdu, msg, msg_type);
 }
 
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-
 void rrc_nr::ue::handle_hook(string ul_message){
 
   bool found = false;
@@ -1656,7 +1649,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -1702,7 +1694,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -1748,7 +1739,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -1794,7 +1784,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -1840,7 +1829,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -1886,7 +1874,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -1932,7 +1919,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -1978,7 +1964,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -2024,7 +2009,6 @@ void rrc_nr::ue::handle_hook(string ul_message){
               dl_message_handle((*it).dl_reply, (*it).dl_params);
               dl_message_handle((*it).dl_reply, (*it).dl_params);
             }
-            //found = true;
             r_testset.rrc_commands_after_aka.erase(it);
             break;
           }
@@ -2040,16 +2024,16 @@ void rrc_nr::ue::handle_hook(string ul_message){
 }
 
 void rrc_nr::ue::dl_message_handle(string dl_message, vector <string> params){
- if(dl_message == "rrc_release") user_send_rrc_release(params);
- else if(dl_message == "rrc_reject") user_send_rrc_reject(params);
- else if(dl_message == "rrc_setup") user_send_rrc_setup(params);
- else if(dl_message == "rrc_reconfiguration") user_send_rrc_reconfiguration(params);
- else if(dl_message == "rrc_reestablishment") user_send_rrc_reestablishment(params);
- else if(dl_message == "rrc_resume") user_send_rrc_resume(params);
- else if(dl_message == "rrc_security_mode_command") user_send_rrc_security_mode_command(params);
- else if(dl_message == "rrc_ue_capability_enquiry") user_send_rrc_ue_capability_enquiry(params);
- else if(dl_message == "rrc_countercheck") user_send_rrc_countercheck(params);
- else if(dl_message == "mobility_from_nr") user_send_mobility_from_nr(params);
+   if(dl_message == "rrc_release") user_send_rrc_release(params);
+   else if(dl_message == "rrc_reject") user_send_rrc_reject(params);
+   else if(dl_message == "rrc_setup") user_send_rrc_setup(params);
+   else if(dl_message == "rrc_reconfiguration") user_send_rrc_reconfiguration(params);
+   else if(dl_message == "rrc_reestablishment") user_send_rrc_reestablishment(params);
+   else if(dl_message == "rrc_resume") user_send_rrc_resume(params);
+   else if(dl_message == "rrc_security_mode_command") user_send_rrc_security_mode_command(params);
+   else if(dl_message == "rrc_ue_capability_enquiry") user_send_rrc_ue_capability_enquiry(params);
+   else if(dl_message == "rrc_countercheck") user_send_rrc_countercheck(params);
+   else if(dl_message == "mobility_from_nr") user_send_mobility_from_nr(params);
 }
 
 void rrc_nr::ue::user_send_rrc_release(vector <string> params){
