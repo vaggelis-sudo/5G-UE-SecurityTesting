@@ -679,159 +679,103 @@ void user_ul_handle(const char* uplink_message, amf_ue_t* amf_ue){
     nas_command command_temp_after = n_testset.nas_commands_after_aka;
 
     if(strcmp(uplink_message, "registration_request") == 0 && n_testset.aka_size != 0){
-        //while (command_temp < endCommand){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp.ue_ul_handle, "registration_request") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp, amf_ue);
                 n_testset.aka_size--;
-                //break;
             }
-            //command_temp++;
-        //}
     }else if(strcmp(uplink_message, "registration_complete") == 0 && n_testset.aka_size != 0){
-        //while (command_temp < endCommand){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp.ue_ul_handle, "registration_complete") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp, amf_ue);
                 n_testset.aka_size--;
-                //break;
             }
-            //command_temp++;
-        //}
     }else if(strcmp(uplink_message, "ul_nas_transport") == 0 && n_testset.aka_size != 0){
-        //while (command_temp < endCommand){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp.ue_ul_handle, "ul_nas_transport") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp, amf_ue);
                 n_testset.aka_size--;
-                //break;
             }
-            //command_temp++;
-        //}
     }else if(strcmp(uplink_message, "deregistration_request") == 0 && n_testset.after_aka_size != 0){
-        //while (command_temp_after < endCommand_after){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp_after.ue_ul_handle, "deregistration_request") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp_after, amf_ue);
                 n_testset.after_aka_size--;
-                //break;
             }
-            //command_temp_after++;
-        //}
     }else if(strcmp(uplink_message, "service_request") == 0 && n_testset.after_aka_size != 0){
-        //while (command_temp_after < endCommand_after){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp_after.ue_ul_handle, "service_request") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp_after, amf_ue);
                 n_testset.after_aka_size--;
-                //break;
             }
-            //command_temp_after++;
-        //}
     }else if(strcmp(uplink_message, "security_mode_reject") == 0 && n_testset.aka_size != 0){
-        //while (command_temp < endCommand){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp.ue_ul_handle, "security_mode_reject") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp, amf_ue);
                 n_testset.aka_size--;
-                //break;
             }
-            //command_temp++;
-        //}
     }else if(strcmp(uplink_message, "authentication_response") == 0 && n_testset.aka_size != 0){
-        //while (command_temp < endCommand){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp.ue_ul_handle, "authentication_response") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp, amf_ue);
                 n_testset.aka_size--;
-                //break;
             }
-            //command_temp++;
-        //}
     }else if(strcmp(uplink_message, "authentication_failure") == 0 && n_testset.aka_size != 0){
-        //while (command_temp < endCommand){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp.ue_ul_handle, "authentication_failure") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp, amf_ue);
                 n_testset.aka_size--;
-                //break;
             }
-            //command_temp++;
-        //}
     }else if(strcmp(uplink_message, "identity_response") == 0 && n_testset.aka_size != 0){
-        //while (command_temp < endCommand){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp.ue_ul_handle, "identity_response") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp, amf_ue);
                 n_testset.aka_size--;
-                //break;
             }
-            //command_temp++;
-        //}
     }else if(strcmp(uplink_message, "security_mode_complete") == 0 && n_testset.aka_size != 0){
-        //while (command_temp < endCommand){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp.ue_ul_handle, "security_mode_complete") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp, amf_ue);
                 n_testset.aka_size--;
-                //break;
             }
-            //command_temp++;
-        //}
     }else if(strcmp(uplink_message, "configuration_update_complete") == 0 && n_testset.after_aka_size != 0){
-        //while (command_temp_after < endCommand_after){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp_after.ue_ul_handle, "configuration_update_complete") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp_after, amf_ue);
                 n_testset.after_aka_size--;
-                //break;
             }
-            //command_temp_after++;
-        //}
     }else if(strcmp(uplink_message, "gmm_status") == 0 && n_testset.after_aka_size != 0){
-        //while (command_temp_after < endCommand_after){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp_after.ue_ul_handle, "gmm_status") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp_after, amf_ue);
                 n_testset.after_aka_size--;
-                //break;
             }
-            //command_temp_after++;
-        //}
     }else if(strcmp(uplink_message, "deregistration_accept") == 0 || n_testset.after_aka_size != 0){
-        //while (command_temp_after < endCommand_after){
             ogs_info("UL Handler 1!!!");
             if(strcmp(command_temp_after.ue_ul_handle, "deregistration_accept") == 0){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp_after, amf_ue);
                 n_testset.after_aka_size--;
-                //break;
             }
-            //command_temp_after++;
-        //}
     }else if(((strcmp(uplink_message, "timer_t3570") == 0) || (strcmp(uplink_message, "timer_t3560") == 0) || (strcmp(uplink_message, "timer_t3555") == 0) || (strcmp(uplink_message, "timer_t3550") == 0) || (strcmp(uplink_message, "timer_t3513") == 0) || (strcmp(uplink_message, "timer_t3522") == 0)) && n_testset.after_aka_size != 0){
-        //while (command_temp_after < endCommand_after){
             ogs_info("UL Handler 1!!!");
             if((strcmp(command_temp_after.ue_ul_handle, "timer_t3570") == 0) || (strcmp(command_temp_after.ue_ul_handle, "timer_t3560") == 0) || (strcmp(command_temp_after.ue_ul_handle, "timer_t3550") == 0) || (strcmp(command_temp_after.ue_ul_handle, "timer_t3555") == 0) || (strcmp(command_temp_after.ue_ul_handle, "timer_t3513") == 0) || (strcmp(command_temp_after.ue_ul_handle, "timer_t3522") == 0)){
                 ogs_info("UL Handler 2!!!");
                 execute_flow(command_temp_after, amf_ue);
                 n_testset.after_aka_size--;
-                //break;
             }
-            //command_temp_after++;
-        //}
     }else{
         printf("Invalid UP Selection or Empty List\n" );
     }
@@ -854,9 +798,7 @@ void execute_flow(nas_command command_temp, amf_ue_t* amf_ue){
 }
 
 void user_dl_handle(char* downlink_message, amf_ue_t* amf_ue, char** parameters, int size){
-
-  ogs_info("DL Handler!!!");
-
+   ogs_info("DL Handler!!!");
    if(strcmp(downlink_message, "registration_accept") == 0) ogs_assert(OGS_OK == user_nas_5gs_send_registration_accept(amf_ue, parameters, size));
    else if(strcmp(downlink_message, "registration_reject") == 0) ogs_assert(OGS_OK == user_nas_5gs_send_registration_reject(amf_ue, parameters, size));
    else if(strcmp(downlink_message, "deregistration_request") == 0) ogs_assert(OGS_OK == user_nas_5gs_send_de_registration_request(amf_ue, parameters, size));
@@ -870,8 +812,7 @@ void user_dl_handle(char* downlink_message, amf_ue_t* amf_ue, char** parameters,
    else if(strcmp(downlink_message, "identity_request") == 0) ogs_assert(OGS_OK == user_nas_5gs_send_identity_request(amf_ue, parameters, size));
    else if(strcmp(downlink_message, "security_mode_command") == 0) ogs_assert(OGS_OK == user_nas_5gs_send_security_mode_command(amf_ue, parameters, size));
    else if(strcmp(downlink_message, "deregistration_accept") == 0) ogs_assert(OGS_OK == user_nas_5gs_send_de_registration_accept(amf_ue, parameters, size));
-   else printf("Invalid DL Selection\n" );
-        
+   else printf("Invalid DL Selection\n" );      
 }
 
 int user_nas_5gs_send_registration_reject(amf_ue_t* amf_ue, char** parameters, int size)
@@ -1359,10 +1300,6 @@ int user_nas_5gs_send_de_registration_request(amf_ue_t* amf_ue, char** parameter
    if(deregistration_security) gmmbuf = user_nas_5gs_security_encode(amf_ue, &message, initial_security_header);
    else gmmbuf = ogs_nas_5gs_plain_encode(&message);
 
-   //amf_ue->t3522.pkbuf = ogs_pkbuf_copy(gmmbuf); ?
-   //ogs_expect_or_return_val(amf_ue->t3522.pkbuf, OGS_ERROR);
-   //ogs_timer_start(amf_ue->t3522.timer, amf_timer_cfg(AMF_TIMER_T3522)->duration);
-
    rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
    ogs_expect_or_return_val(rv == OGS_OK, OGS_ERROR);
 
@@ -1521,10 +1458,6 @@ int user_nas_5gs_send_identity_request(amf_ue_t* amf_ue, char** parameters, int 
     gmmbuf = ogs_nas_5gs_plain_encode(&message);
     ogs_expect_or_return_val(gmmbuf, OGS_ERROR);
 
-    //amf_ue->t3570.pkbuf = ogs_pkbuf_copy(gmmbuf); ?
-    //ogs_expect_or_return_val(amf_ue->t3570.pkbuf, OGS_ERROR);
-    //ogs_timer_start(amf_ue->t3570.timer, amf_timer_cfg(AMF_TIMER_T3570)->duration);
-
     rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
     ogs_expect(rv == OGS_OK);
 
@@ -1654,12 +1587,8 @@ int user_nas_5gs_send_gmm_status(amf_ue_t* amf_ue, char** parameters, int size)
 
     if(gmm_status_security) gmmbuf = user_nas_5gs_security_encode(amf_ue, &message, initial_security_header);
     else gmmbuf = ogs_nas_5gs_plain_encode(&message);
-    //ogs_expect_or_return_val(gmmbuf, OGS_ERROR);
 
     rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
-    //ogs_expect(rv == OGS_OK);
-    
-    ogs_info("Modified GMM Status 2!!!");
 
     return rv;
 }
@@ -1739,10 +1668,6 @@ int user_nas_5gs_send_authentication_request(amf_ue_t* amf_ue, char** parameters
 
     gmmbuf =  ogs_nas_5gs_plain_encode(&message);
     ogs_expect_or_return_val(gmmbuf, OGS_ERROR);
-
-    //amf_ue->t3560.pkbuf = ogs_pkbuf_copy(gmmbuf); ?
-    //ogs_expect_or_return_val(amf_ue->t3560.pkbuf, OGS_ERROR);
-    //ogs_timer_start(amf_ue->t3560.timer, amf_timer_cfg(AMF_TIMER_T3560)->duration);
 
     rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
     ogs_expect(rv == OGS_OK);
@@ -2109,10 +2034,6 @@ int user_nas_5gs_send_security_mode_command(amf_ue_t* amf_ue, char** parameters,
     else gmmbuf = ogs_nas_5gs_plain_encode(&message);
     ogs_expect_or_return_val(gmmbuf, OGS_ERROR);
 
-    //amf_ue->t3560.pkbuf = ogs_pkbuf_copy(gmmbuf); ?
-    //ogs_expect_or_return_val(amf_ue->t3560.pkbuf, OGS_ERROR);
-    //ogs_timer_start(amf_ue->t3560.timer, amf_timer_cfg(AMF_TIMER_T3560)->duration);
-
     rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
     ogs_expect(rv == OGS_OK);
 
@@ -2124,7 +2045,6 @@ int user_nas_5gs_send_service_accept(amf_ue_t* amf_ue, char** parameters, int si
     int rv, i;
     ran_ue_t *ran_ue = NULL;
     ogs_pkbuf_t *gmmbuf = NULL;
-    //ogs_pkbuf_t *ngapbuf = NULL;
     ogs_nas_5gs_message_t message;
     ogs_nas_5gs_service_accept_t *service_accept = &message.gmm.service_accept;
     ogs_nas_pdu_session_status_t *pdu_session_status = NULL;
@@ -2206,29 +2126,6 @@ int user_nas_5gs_send_service_accept(amf_ue_t* amf_ue, char** parameters, int si
     if(service_accept_security) gmmbuf = user_nas_5gs_security_encode(amf_ue, &message, initial_security_header);
     else gmmbuf = ogs_nas_5gs_plain_encode(&message);
     ogs_expect_or_return_val(gmmbuf, OGS_ERROR);
-
-    //transfer_needed = PDU_RES_SETUP_REQ_TRANSFER_NEEDED(amf_ue);
-
-    //if (ran_ue->initial_context_setup_request_sent == false && (ran_ue->ue_context_requested == true || transfer_needed == true)) {
-    //    ngapbuf = ngap_ue_build_initial_context_setup_request(amf_ue, gmmbuf);
-    //    ogs_expect_or_return_val(ngapbuf, OGS_ERROR);
-
-    //    rv = nas_5gs_send_to_gnb(amf_ue, ngapbuf);
-    //    ogs_expect_or_return_val(rv == OGS_OK, OGS_ERROR);
-
-    //    ran_ue->initial_context_setup_request_sent = true;
-    //} else {
-    //    if (transfer_needed == true) {
-    //        ngapbuf = ngap_ue_build_pdu_session_resource_setup_request(amf_ue, gmmbuf);
-    //        ogs_expect_or_return_val(ngapbuf, OGS_ERROR);
-
-    //        rv = nas_5gs_send_to_gnb(amf_ue, ngapbuf);
-    //        ogs_expect_or_return_val(rv == OGS_OK, OGS_ERROR);
-    //    } else {
-    //        rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
-    //        ogs_expect_or_return_val(rv == OGS_OK, OGS_ERROR);
-    //    }
-    //}
     
     rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
     ogs_expect(rv == OGS_OK);
@@ -2526,12 +2423,6 @@ int user_nas_5gs_send_configuration_update_command(amf_ue_t* amf_ue, char** para
     else gmmbuf = ogs_nas_5gs_plain_encode(&message);
     ogs_expect_or_return_val(gmmbuf, OGS_ERROR);
 
-    //if ((&param)->acknowledgement_requested) {
-    //    amf_ue->t3555.pkbuf = ogs_pkbuf_copy(gmmbuf);
-    //    ogs_expect_or_return_val(amf_ue->t3555.pkbuf, OGS_ERROR);
-    //    ogs_timer_start(amf_ue->t3555.timer, amf_timer_cfg(AMF_TIMER_T3555)->duration);
-    //}
-
     rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
     ogs_expect(rv == OGS_OK);
 
@@ -2541,9 +2432,7 @@ int user_nas_5gs_send_configuration_update_command(amf_ue_t* amf_ue, char** para
 int user_nas_5gs_send_registration_accept(amf_ue_t* amf_ue, char** parameters, int size)
 {
     int rv, i;
-    //bool transfer_needed = false;
     ran_ue_t *ran_ue = NULL;
-    //ogs_pkbuf_t *ngapbuf = NULL;
     ogs_pkbuf_t *gmmbuf = NULL;
     ogs_nas_5gs_message_t message;
     ogs_nas_5gs_registration_accept_t *registration_accept = &message.gmm.registration_accept;
@@ -2925,33 +2814,6 @@ int user_nas_5gs_send_registration_accept(amf_ue_t* amf_ue, char** parameters, i
     else gmmbuf = ogs_nas_5gs_plain_encode(&message);
     ogs_expect_or_return_val(gmmbuf, OGS_ERROR);
 
-    //transfer_needed = PDU_RES_SETUP_REQ_TRANSFER_NEEDED(amf_ue);
-
-    //if (ran_ue->initial_context_setup_request_sent == false &&
-    //    (ran_ue->ue_context_requested == true || transfer_needed == true)) {
-    //    ngapbuf = ngap_ue_build_initial_context_setup_request(amf_ue, gmmbuf);
-    //    ogs_expect_or_return_val(ngapbuf, OGS_ERROR);
-
-    //    rv = nas_5gs_send_to_gnb(amf_ue, ngapbuf);
-    //    ogs_expect_or_return_val(rv == OGS_OK, OGS_ERROR);
-
-    //    ran_ue->initial_context_setup_request_sent = true;
-    //} else {
-    //    if (transfer_needed == true) {
-    //        ngapbuf = ngap_ue_build_pdu_session_resource_setup_request(amf_ue, gmmbuf);
-    //        ogs_expect_or_return_val(ngapbuf, OGS_ERROR);
-
-    //        rv = nas_5gs_send_to_gnb(amf_ue, ngapbuf);
-    //       ogs_expect_or_return_val(rv == OGS_OK, OGS_ERROR);
-    //    } else {
-    //        ngapbuf = ngap_build_downlink_nas_transport(ran_ue, gmmbuf, true, true);
-    //        ogs_expect_or_return_val(ngapbuf, OGS_ERROR);
-
-    //        rv = nas_5gs_send_to_gnb(amf_ue, ngapbuf);
-    //        ogs_expect_or_return_val(rv == OGS_OK, OGS_ERROR);
-    //    }
-    //}
-
     rv = nas_5gs_send_to_downlink_nas_transport(amf_ue, gmmbuf);
     ogs_expect(rv == OGS_OK);
 
@@ -2967,7 +2829,6 @@ ogs_pkbuf_t *user_nas_5gs_security_encode(amf_ue_t *amf_ue, ogs_nas_5gs_message_
     ogs_pkbuf_t *new = NULL;
 
     ogs_assert(amf_ue);
-    //ogs_assert(message);
 
     if(initial_security_header == message->h.security_header_type){ //no modification
         switch (message->h.security_header_type) {
