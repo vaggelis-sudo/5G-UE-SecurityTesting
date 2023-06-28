@@ -1,0 +1,26 @@
+[ 
+ { 
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null"
+ },
+ 
+ { 
+   "ue_ul_handle": "nas_security_mode_complete",
+   "dl_reply": "rrc_security_mode_command",
+   "command_mode": "send",
+   "dl_params":{
+     "ciphering_algorithm": "nea0",
+     "integrity_prot_algorithm": "nia0",
+     "ciphering+integrity": "disabled"
+   }
+ },
+
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null" 
+ }
+]

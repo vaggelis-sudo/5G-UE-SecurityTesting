@@ -1,0 +1,22 @@
+[ 
+ { 
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null"
+ },
+ 
+ { 
+   "ue_ul_handle": "authentication_response",
+   "dl_reply": "authentication_reject",
+   "command_mode": "send",
+   "dl_params": "null"
+ },
+
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null" 
+ }
+]

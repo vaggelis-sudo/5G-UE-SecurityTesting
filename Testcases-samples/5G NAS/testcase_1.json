@@ -1,0 +1,24 @@
+[ 
+ { 
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null"
+ },
+ 
+ { 
+   "ue_ul_handle": "security_mode_complete",
+   "dl_reply": "deregistration_request",
+   "command_mode": "send",
+   "dl_params":{
+     "de_registration_type.re_registration_required": "OpenAPI_deregistration_reason__5GS_TO_EPS_MOBILITY"
+   }
+ },
+
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null" 
+ }
+]

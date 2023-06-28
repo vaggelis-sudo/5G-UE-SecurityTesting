@@ -1,0 +1,25 @@
+[ 
+ { 
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null"
+ },
+ 
+ { 
+   "ue_ul_handle": "authentication_response",
+   "dl_reply": "security_mode_command",
+   "command_mode": "send",
+   "dl_params":{
+     "replayed_ue_security_capabilities_nr_ea":"128",
+     "replayed_ue_security_capabilities_nr_ia":"128"
+   }
+ },
+
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null" 
+ }
+]

@@ -1,0 +1,29 @@
+[ 
+ { 
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null"
+ },
+ 
+ { 
+   "ue_ul_handle": "authentication_response",
+   "dl_reply": "security_mode_command",
+   "command_mode": "send",
+   "dl_params":{
+     "nas_security_encryption": "OGS_NAS_SECURITY_ALGORITHMS_NEA0",
+     "nas_security_integrity": "OGS_NAS_SECURITY_ALGORITHMS_NIA0",
+     "ngksi_tsc":"0",
+     "ngksi_ksi":"0",
+     "security_header_type":"OGS_NAS_SECURITY_HEADER_PLAIN_NAS_MESSAGE",
+     "security_mode_command_security":"disabled"
+   }
+ },
+
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null" 
+ }
+]

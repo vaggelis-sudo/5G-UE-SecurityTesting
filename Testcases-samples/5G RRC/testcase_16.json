@@ -1,0 +1,25 @@
+[ 
+ { 
+   "ue_ul_handle": "rrc_setup_complete",
+   "dl_reply": "rrc_release",
+   "command_mode": "send",
+   "dl_params":{
+     "cell_resel_priorities_present": "true",
+     "cell_resel_priorities_t320": "min180"
+   }
+ },
+ 
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null"
+ },
+
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null" 
+ }
+]

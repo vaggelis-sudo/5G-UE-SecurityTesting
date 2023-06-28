@@ -1,0 +1,24 @@
+[ 
+ { 
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null"
+ },
+ 
+ { 
+   "ue_ul_handle": "registration_request",
+   "dl_reply": "authentication_request",
+   "command_mode": "send",
+   "dl_params":{
+     "authentication_parameter_autn": "0000000000000000"
+   }
+ },
+
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null" 
+ }
+]

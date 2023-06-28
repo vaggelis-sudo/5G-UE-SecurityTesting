@@ -1,0 +1,25 @@
+[ 
+ { 
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null"
+ },
+ 
+ { 
+   "ue_ul_handle": "security_mode_complete",
+   "dl_reply": "security_mode_command",
+   "command_mode": "replay",
+   "dl_params":{
+     "ngksi_tsc": "0",
+     "ngksi_ksi": "2"
+   }
+ },
+
+ {
+   "ue_ul_handle": "null",
+   "dl_reply": "null",
+   "command_mode": "null",
+   "dl_params": "null" 
+ }
+]
