@@ -61,7 +61,40 @@ curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -
 
 ## Usage
 
-The usage instructions will be provided shortly.
+### Setup
+
+Before starting the automatic testing process, it is advised to check if all the components are working fine.
+For the NAS test:
+1. Run open5gs as follows: `sudo ./open5gs/build/tests/app/5gc -n /home/usr/Desktop/5G/Test_nas/test1.json`
+2. Then run srsRAN: `sudo ./srsRAN/build/srsenb/src/srsenb configFiles/enb.conf`
+
+For the RRC test:
+1. Run open5gs as follows: `sudo ./open5gs/build/tests/app/5gc -n /home/usr/Desktop/5G/Test_nas/test1.json`
+2. Then run srsRAN: `sudo ./srsRAN/build/srsenb/src/srsenb configFiles/enb.conf`
+3. Finally, at the eNB side, `test /home/usr/Desktop/5G/Test_rrc/testcases1.json`
+
+If these steps run properly, then the system is ready for the automation process using `handler.py`. Please note that in order to run the RRC test, it is necessary to run a NAS test as well. In this case, the NAS test1.json is executed concurrently with the RRC test.
+
+For the automation process, connect the Android device to the PC using a USB connection and ensure that the phone is recognized as a connected device. This tutorial can be helpful: https://www.youtube.com/watch?v=GERlhgCcoBc
+
+The program assumes Opne5gs, srsRAN, NAS test case folder, and RRC test case folder are in the same directory. In case of a different directory kindly change the path. For example:
+
+1. For testcase directory: test_directory = `./path/to/testcase/directory` e.g., `test_directory = "./Test_nas"`
+2. For srsRAN:  srsran_command = "sudo", "-S", **"./srsRAN/build/srsenb/src/srsenb"**, **"configFiles/enb.conf"** [change the bold part]
+3. For open5gs: open5gs_command = "sudo", "-S", **"./open5gs/build/tests/app/5gc"**, "-n", **"./Test_nas/" + file_name + ".json"** [change the bold part]
+
+### Options
+
+The type of test case needs to be specified with -t flag, followed by an option either nas or rrc. For example 
+`sudo python3 handler.py -t rrc`
+
+### Execution
+
+This program takes all the test cases and runs them one by one.The phone is toggled between airplane mode and normal mode a maximum of 5 times to establish a fresh connection with the network. As soon as "testing finished" keyword is found then it immediately completes that test case and goes for the next test case. If the keyword is not found (after 5 times toggling), then go for the next test case. When the whole round is completed it tries for the failed test case again. 
+
+### Results
+
+The program will create a folder (e.g., rrc_results). All logs and pcaps will be saved there. It will also create a real-time test case status log (e.g., Fri Jun 23 6:29:57 2023_RRC.txt ) where it can be seen if a test case is completed or not invoked.
 
 ## License
 
