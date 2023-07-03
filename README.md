@@ -72,17 +72,19 @@ For the NAS test:
 For the RRC test:
 1. Run open5gs as follows: `sudo ./open5gs/build/tests/app/5gc -n /home/usr/Desktop/5G/Test_nas/test1.json`
 2. Then run srsRAN: `sudo ./srsRAN/build/srsenb/src/srsenb configFiles/enb.conf`
-3. Finally, at the eNB side, `test /home/usr/Desktop/5G/Test_rrc/testcases1.json`
+3. Finally, at the eNB side, `test /home/usr/Desktop/5G/Test_rrc/testcases1.json` (On the terminal, after a complete gNB initialization)
 
-If these steps run properly, then the system is ready for the automation process using `handler.py`. Please note that in order to run the RRC test, it is necessary to run a NAS test as well. In this case, the NAS test1.json is executed concurrently with the RRC test.
+If these steps run properly, then the system is ready for the automation process using `handler.py`. Please note that in order to run the RRC test, it is necessary to run a NAS test as well. In this case, the NAS test1.json is executed concurrently with the RRC test, but NAS test1.json can be a dummy testcase.
 
 For the automation process, connect the Android device to the PC using a USB connection and ensure that the phone is recognized as a connected device. This tutorial can be helpful: https://www.youtube.com/watch?v=GERlhgCcoBc
 
-The program assumes Opne5gs, srsRAN, NAS test case folder, and RRC test case folder are in the same directory. In case of a different directory kindly change the path. For example:
+The program assumes Open5gs, srsRAN, NAS test case folder, and RRC test case folder are in the same directory. In case of a different directory kindly change the path. For example:
 
 1. For testcase directory: test_directory = `./path/to/testcase/directory` e.g., `test_directory = "./Test_nas"`
 2. For srsRAN:  srsran_command = "sudo", "-S", **"./srsRAN/build/srsenb/src/srsenb"**, **"configFiles/enb.conf"** [change the bold part]
 3. For open5gs: open5gs_command = "sudo", "-S", **"./open5gs/build/tests/app/5gc"**, "-n", **"./Test_nas/" + file_name + ".json"** [change the bold part]
+
+In this repository we provide sample testcases for NAS and RRC. The parameters and names are selected according to our definitions in the modified messages in the files: nas-path.c (Open5GS) and rrc_nr_ue.cc (srsRAN).
 
 ### Options
 
@@ -99,14 +101,27 @@ The program will create a folder (e.g., rrc_results). All logs and pcaps will be
 
 ## License
 
-The **5G-UE-SecurityTesting** project is open-source. The specific license details will be provided later.
+The **5G-UE-SecurityTesting** project is open-source.
 
 ## Reference
 
 If you are using or referencing this project, please cite the following paper:
 
-[UE Security Reloaded: Developing a 5G Standalone User-Side Security Testing Framework](https://wisec2023.surrey.ac.uk/accepted-papers/#UE_Security_Reloaded__Developing_a_5G_Standalone_User_Side_Security_Testing_Framework)<br>
-Evangelos Bitsikas, Syed Khandker, Ahmad Salous, Aanjhan Ranganathan, Roger Piqueras Jover, and Christina Pöpper<br>
-16th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '23), Guildford, Surrey, UK
+[UE Security Reloaded: Developing a 5G Standalone User-Side Security Testing Framework](https://dl.acm.org/doi/10.1145/3558482.3590194)<br>
 
-Please note that the paper will be linked here once it is available.
+@inproceedings{bitsikas23UEframework,
+author = {Bitsikas, Evangelos and Khandker, Syed and Salous, Ahmad and Ranganathan, Aanjhan and Piqueras Jover, Roger and P\"{o}pper, Christina},
+title = {UE Security Reloaded: Developing a 5G Standalone User-Side Security Testing Framework},
+year = {2023},
+isbn = {9781450398596},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3558482.3590194},
+doi = {10.1145/3558482.3590194},
+booktitle = {Proceedings of the 16th ACM Conference on Security and Privacy in Wireless and Mobile Networks},
+pages = {121–132},
+numpages = {12},
+keywords = {open5gs, 5g, user equipment, srsran, security testing},
+location = {Guildford, United Kingdom},
+series = {WiSec '23}
+}
