@@ -107,21 +107,15 @@ The **5G-UE-SecurityTesting** project is open-source.
 
 If you are using or referencing this project, please cite the following paper:
 
-[UE Security Reloaded: Developing a 5G Standalone User-Side Security Testing Framework](https://dl.acm.org/doi/10.1145/3558482.3590194)<br>
+<blockquote style="background-color: #f7f7f7; padding: 10px; border-left: 6px solid #1f618d;">
 
+<pre>
 @inproceedings{bitsikas23UEframework,
-author = {Bitsikas, Evangelos and Khandker, Syed and Salous, Ahmad and Ranganathan, Aanjhan and Piqueras Jover, Roger and P\"{o}pper, Christina},
-title = {UE Security Reloaded: Developing a 5G Standalone User-Side Security Testing Framework},
-year = {2023},
-isbn = {9781450398596},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3558482.3590194},
-doi = {10.1145/3558482.3590194},
-booktitle = {Proceedings of the 16th ACM Conference on Security and Privacy in Wireless and Mobile Networks},
-pages = {121–132},
-numpages = {12},
-keywords = {open5gs, 5g, user equipment, srsran, security testing},
-location = {Guildford, United Kingdom},
-series = {WiSec '23}
+  <span style="color: #c0392b;">title = {UE Security Reloaded: Developing a 5G Standalone User-Side Security Testing Framework},</span>
+  <span style="color: #2980b9;">author = {Bitsikas, Evangelos and Khandker, Syed and Salous, Ahmad and Ranganathan, Aanjhan and Piqueras Jover, Roger and Pöpper, Christina},</span>
+  <span style="color: #27ae60;">booktitle = {Proceedings of the 16th ACM Conference on Security and Privacy in Wireless and Mobile Networks},</span>
+  <span style="color: #8e44ad;">year = {2023},</span>
+  <span style="color: #e67e22;">url = {https://doi.org/10.1145/3558482.3590194}</span>
 }
+</pre>
+</blockquote>
