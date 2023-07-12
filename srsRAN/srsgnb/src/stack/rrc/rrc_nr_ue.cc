@@ -1755,7 +1755,7 @@ void rrc_nr::ue::handle_hook(string ul_message){
           dl_message_handle((*it).dl_reply, (*it).dl_params);
         }
         found = true;
-        r_testset.rrc_commands_aka.erase(it);
+        r_testset.rrc_commands_before_aka.erase(it);
         break;
       }
     }
@@ -1800,7 +1800,7 @@ void rrc_nr::ue::handle_hook(string ul_message){
           dl_message_handle((*it).dl_reply, (*it).dl_params);
         }
         found = true;
-        r_testset.rrc_commands_aka.erase(it);
+        r_testset.rrc_commands_before_aka.erase(it);
         break;
       }
     }
