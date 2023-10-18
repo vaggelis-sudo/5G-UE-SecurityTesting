@@ -992,7 +992,7 @@ int user_nas_5gs_send_service_reject(amf_ue_t* amf_ue, char** parameters, int si
 
     if(parameters != NULL){
      for(i = 0; i < size; i+=2){
-        if(strcmp(parameters[i], "gmm_cause")){
+        if(strcmp(parameters[i], "gmm_cause") == 0){
             if(strcmp(parameters[i+1], "OGS_5GMM_CAUSE_ILLEGAL_UE") == 0){
                 service_reject->gmm_cause = OGS_5GMM_CAUSE_ILLEGAL_UE;
             }else if(strcmp(parameters[i+1], "OGS_5GMM_CAUSE_ILLEGAL_ME") == 0){
