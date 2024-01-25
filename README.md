@@ -9,7 +9,7 @@ This project, **5G-UE-SecurityTesting**, is currently a work in progress. It foc
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-//- [Testcase](#testcase)
+[//]:- [Testcase](#testcase)
 - [License](#license)
 - [Reference](#reference)
 
@@ -100,9 +100,9 @@ This program takes all the test cases and runs them one by one.The phone is togg
 
 The program will create a folder (e.g., rrc_results). All logs and pcaps will be saved there. It will also create a real-time test case status log (e.g., Fri Jun 23 6:29:57 2023_RRC.txt ) where it can be seen if a test case is completed or not invoked.
 
-//## Testcase Generation
+[//]:## Testcase Generation
 
-//Some sample testcases are provided in the repository. We are currently developing a test case generation tool, which is under construction, can be found at https://github.com/MicheleGuerra/5G-UE-Test-suite-generator.
+[//]:Some sample testcases are provided in the repository. We are currently developing a test case generation tool, which is under construction, can be found at https://github.com/MicheleGuerra/5G-UE-Test-suite-generator.
 
 ## License
 
